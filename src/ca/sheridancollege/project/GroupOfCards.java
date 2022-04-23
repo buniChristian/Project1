@@ -1,57 +1,48 @@
-/**
- * SYST 17796 Project Base code.
- * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
+/*
  * @author Christian Buni and Al Justin Pinto
- * March 1, 2022 
+ * Tuesday, April 19, 20222
  */
-package ca.sheridancollege.project;
-
+package deliverable3;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-/**
- * A concrete class that represents any grouping of cards for a Game. HINT, you might want to subclass this more than
- * once. The group of cards has a maximum size attribute which is flexible for reuse.
- *
- * @author dancye
- * @author Paul Bonenfant Jan 2020
- */
 public class GroupOfCards {
 
-    //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
-    private int size;//the size of the grouping
+    private final List<Card> cards = new ArrayList<Card>();
 
-    public GroupOfCards(int size) {
-        this.size = size;
+    GroupOfCards() {
+        createDeck();
     }
 
-    /**
-     * A method that will get the group of cards as an ArrayList
-     *
-     * @return the group of cards.
-     */
-    public ArrayList<Card> getCards() {
-        return cards;
+    public void createDeck() {
+        for (Suit s : Suit.values()) {
+            for (Value r : Value.values()) {
+                cards.add(new Card(r, s));
+            }
+        }
+    }
+    public void shuffleDeck() {
+        Collections.shuffle(this.cards);
     }
 
-    public void shuffle() {
-        Collections.shuffle(cards);
+    public List<Card> getCards() {
+        return this.cards;
     }
 
-    /**
-     * @return the size of the group of cards
-     */
-    public int getSize() {
-        return size;
+    public int getCardsCount() {
+        return this.cards.size();
     }
 
-    /**
-     * @param size the max size for the group of cards
-     */
-    public void setSize(int size) {
-        this.size = size;
+    public Card dealCard() {
+    
+        return this.cards.remove(this.cards.size() - 1);
     }
-
-}//end class
+    public void addCard(Card c) {
+        this.cards.add(0, c);
+    }
+    @Override
+    public String toString() {
+        return this.cards.toString();
+    }
+}
