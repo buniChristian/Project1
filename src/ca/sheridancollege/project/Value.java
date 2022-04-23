@@ -2,7 +2,6 @@
  * @author Christian Buni and Al Justin Pinto
  * Tuesday, April 19, 20222
  */
-package deliverable3;
 
 public enum Value {
     TWO("Two", 2),
