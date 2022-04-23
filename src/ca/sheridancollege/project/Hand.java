@@ -1,8 +1,8 @@
 /*
  * @author Christian Buni and Al Justin Pinto
- * 
+ * Tuesday , April 19, 2022
  */
-package deliverable3;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Hand {
 
-    private List<Card> cards; //players individual cards
+    private List<Card> cards;
 
 
     public Hand() {
