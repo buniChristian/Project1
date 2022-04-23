@@ -2,12 +2,7 @@
  * @author Christian Buni and Al Justin Pinto
  * Tuesday, April 19, 20222
  */
-package deliverable3;
 
-/**
- *
- * @author chris
- */
 public enum Suit {
     DIAMONDS("Diamonds", "D"),
     SPADES("Spades", "S"),
